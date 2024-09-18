@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Anasayfa
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        <h1>Anasayfa</h1>
+
+        <div class="col-6">
+
+            {% if user.is_authenticated %}
+            <h5>Hoşgeldin, {{user.get_username}}!</h5>         
+            {% else %}
+            <p>Sistemi kullanabilmek için lütfen giriş yapın.</p>
+            {% endif %}
+
+        </div>
+
+        <div class="col-6">
+            <img src="{% static 'itu_logo.jpg' %}" style="width: 75%; margin: 0 auto; display: block; opacity: 0.5;" alt="itu_logo">
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
